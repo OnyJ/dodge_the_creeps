@@ -4,6 +4,8 @@ extends CanvasLayer
 signal start_game
 signal options
 
+#######################
+# Main
 
 func update_score(score):
 	$ScoreLabel.text = str(score)
@@ -35,7 +37,9 @@ func _on_MessageTimer_timeout():
 	$MessageLabel.hide()
 
 
+#######################
 # Options Button
+# make an options script from this ?
 
 func show_options():
 	# show Controls
@@ -49,14 +53,11 @@ func show_start_menu():
 	$MessageLabel.show()
 	$StartButton.show()
 
-
 func hide_start_menu():
 	# hide messages and buttons
 	$ScoreLabel.hide()
 	$MessageLabel.hide()
 	$StartButton.hide()
-	pass
-
 
 func switch_options_view():
 	if $OptionsButton.text == "Options":
@@ -66,7 +67,6 @@ func switch_options_view():
 	elif $OptionsButton.text == "Back":
 		show_start_menu()
 		$OptionsButton.text = "Options"
-
 
 func _on_OptionsButton_pressed():
 	switch_options_view()
